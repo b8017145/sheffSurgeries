@@ -34,8 +34,8 @@ class Patient {
 
 	patientPhone nullable: false
 	patientPhone blank: false
-	patientPhone min:11
-	patientPhone max:11
+	patientPhone minSize:11
+	patientPhone maxSize:11
 
 
     }

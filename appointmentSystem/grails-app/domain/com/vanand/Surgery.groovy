@@ -26,11 +26,12 @@ class Surgery {
 
 	telephone nullable: false
 	telephone blank: false
-	telephone min:11
-	telephone max:11
+	telephone minSize:11
+	telephone maxSize:11
 
 	numberOfPatients nullable: false
 	numberOfPatients blank: false
+	numberOfPatients min:1
 	numberOfPatients max:50
 
 	description nullable: false

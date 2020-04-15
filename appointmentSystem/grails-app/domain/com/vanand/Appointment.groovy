@@ -4,7 +4,7 @@ class Appointment {
 
 	Integer appID;
 	Date appDate;
-	Date appTime;
+	String appTime;
 	Integer appDuration;
 	String roomNumber;
 
@@ -13,6 +13,7 @@ class Appointment {
 	appID nullable: false
 	appID blank: false
 	appID unique: true
+	appID min:1
 
 	appDate nullable: false
 	appDate blank: false
@@ -22,6 +23,7 @@ class Appointment {
 
 	appDuration nullable: false
 	appDuration blank: false
+	appDuration min:1
 
 	roomNumber nullable: false
 	roomNumber blank: false

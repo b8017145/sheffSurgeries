@@ -26,8 +26,8 @@ class Receptionist {
 
 	recepPhone nullable: false
 	recepPhone blank: false
-	recepPhone min:11
-	recepPhone max:11
+	recepPhone minSize:11
+	recepPhone maxSize:11
 
     }
 }

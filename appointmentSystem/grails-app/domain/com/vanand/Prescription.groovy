@@ -17,6 +17,7 @@ class Prescription {
 	prescripNumber nullable: false
 	prescripNumber blank: false
 	prescripNumber unique:true
+	prescripNumber min:1
 
 	medicine nullable: false
 	medicine blank: false

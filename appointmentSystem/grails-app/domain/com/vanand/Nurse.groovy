@@ -25,8 +25,8 @@ class Nurse {
 
 	nursePhone nullable: false
 	nursePhone blank: false
-	nursePhone min:11
-	nursePhone max:11
+	nursePhone minSize:11
+	nursePhone maxSize:11
 
     }
 }

@@ -35,8 +35,8 @@ class Doctor {
 
 	doctorPhone nullable: false
 	doctorPhone blank: false
-	doctorPhone min:11
-	doctorPhone max:11
+	doctorPhone minSize:11
+	doctorPhone maxSize:11
 
 	bio nullable: false
 	bio blank: false
