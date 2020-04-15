@@ -5,7 +5,7 @@ class Appointment {
 	Integer appID;
 	Date appDate;
 	String appTime;
-	Integer appDuration;
+	Integer appDurationMins;
 	String roomNumber;
 
     static constraints = {
@@ -21,9 +21,9 @@ class Appointment {
 	appTime nullable: false
 	appTime blank: false
 
-	appDuration nullable: false
-	appDuration blank: false
-	appDuration min:1
+	appDurationMins nullable: false
+	appDurationMins blank: false
+	appDurationMins min:1
 
 	roomNumber nullable: false
 	roomNumber blank: false

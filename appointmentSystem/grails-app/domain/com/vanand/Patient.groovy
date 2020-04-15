@@ -37,6 +37,5 @@ class Patient {
 	patientPhone minSize:11
 	patientPhone maxSize:11
 
-
     }
 }
