@@ -5,10 +5,17 @@ class Surgery {
 	String name;
 	String address;
 	String postcode;
-	Integer telephone;
+	String telephone;
 	Integer numberOfPatients;
 	String description;
 	String openingTime;
+	
+
+	static hasMany=[appointments:Appointment, patients:Patient, nurses:Nurse, receptionists:Receptionist, doctors:Doctor]
+
+	String toString(){
+		return name
+	}
 
 
     static constraints = {
@@ -41,6 +48,7 @@ class Surgery {
 	
 	openingTime nullable: false
 	openingTime blank: false
+
 	
 
     }

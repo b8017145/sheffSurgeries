@@ -26,25 +26,86 @@ class BootStrap {
 
 
 	def doc1=new com.vanand.Doctor(
-	fullname:'Dr Varun Anand',
+	fullName:'Dr Varun Anand',
 	qualification:'Msc Medicine',
 	position:'GP',
 	doctorEmail:'vanand@gmail.com',
 	password:'Vanand',
 	doctorOffice:'32',
 	doctorPhone:'01412643272',
-	bio:'General Doctor'
+	bio:'General Doctor',
+	registeredSurgery:surgery1
 	).save()
 	
 	def doc2=new com.vanand.Doctor(
-	fullname:'Dr Tom Whitt',
+	fullName:'Dr Tom Whitt',
 	qualification:'Msc Medical Research',
 	position:'GP, Surgeon',
 	doctorEmail:'twhitt@hotmail.com',
 	password:'whitty123',
 	doctorOffice:'30',
 	doctorPhone:'01412643271',
-	bio:'General Doctor and surgeon'
+	bio:'General Doctor and surgeon',
+	registeredSurgery:surgery1
+	).save()
+
+
+	def recep1=new com.vanand.Receptionist(
+	recepName:'Edward Smith',
+	recepEmail:'esmith@gmail.com',
+	recepUsername:'EdSmith',
+	recepPassword:'Smithy123',
+	recepPhone:'01412647284',
+	surgeryRecep:surgery1
+	).save()
+
+	def recep2=new com.vanand.Receptionist(
+	recepName:'Steve Rogers',
+	recepEmail:'stever@gmail.com',
+	recepUsername:'SteveRogers',
+	recepPassword:'ste123',
+	recepPhone:'01412938475',
+	surgeryRecep:surgery1
+	).save()
+
+
+	def nurse1=new com.vanand.Nurse(
+	nurseName:'Alan Dunk',
+	qualifications:'BSc Carer',
+	nurseEmail:'adunk@gmail.com',
+	nurseOffice:'24',
+	nursePhone:'07291847162',
+	surgeryNurse:surgery1
+	).save()
+
+	def nurse2=new com.vanand.Nurse(
+	nurseName:'Ben Foster',
+	qualifications:'A-level Carer',
+	nurseEmail:'benfost@gmail.com',
+	nurseOffice:'27',
+	nursePhone:'07102983745',
+	surgeryNurse:surgery1
+	).save()
+
+
+	def app1=new com.vanand.Appointment(
+	appID:'1',
+	appDate:new Date('05/05/2020'),
+	appTime:'14:00',
+	appDurationMins:'20',
+	roomNumber:'32',
+	docName:doc1,
+	surgeryAppointment:surgery1
+	).save()
+
+	def app2=new com.vanand.Appointment(
+	appID:'2',
+	appDate:new Date('06/06/2020'),
+	appTime:'12:00',
+	appDurationMins:'20',
+	roomNumber:'30',
+	docName:doc2,
+	surgeryAppointment:surgery2
 	).save()
 
 
@@ -55,68 +116,19 @@ class BootStrap {
 	patientResidence:'Sheffield',
 	patientDob:new Date('03/03/1982'),
 	dateRegistered:new Date('04/04/2020'),
-	patientPhone:'07402345235'
+	patientPhone:'07402345235',
+	appointment:app1
 	).save()
 	
 	def pat2=new com.vanand.Patient(
-	patientID:'1',
+	patientID:'2',
 	patientName:'Robert Tim',
 	patientAddress:'45 Road Street',
 	patientResidence:'Doncaster',
 	patientDob:new Date('01/01/1975'),
 	dateRegistered:new Date('02/02/2020'),
-	patientPhone:'07347524625'
-	).save()
-
-
-	def recep1=new com.vanand.Receptionist(
-	recepName:'Edward Smith',
-	recepEmail:'esmith@gmail.com',
-	recepUsername:'EdSmith',
-	recepPassword:'Smithy123',
-	recepPhone:'01412647284'
-	).save()
-
-	def recep2=new com.vanand.Receptionist(
-	recepName:'Steve Rogers',
-	recepEmail:'stever@gmail.com',
-	recepUsername:'SteveRogers',
-	recepPassword:'ste123',
-	recepPhone:'01412938475'
-	).save()
-
-
-	def nurse1=new com.vanand.Nurse(
-	nurseName:'Alan Dunk',
-	qualifications:'BSc Carer',
-	nurseEmail:'adunk@gmail.com',
-	nurseOffice:'24',
-	nursePhone:'07291847162'
-	).save()
-
-	def nurse2=new com.vanand.Nurse(
-	nurseName:'Ben Foster',
-	qualifications:'A-level Carer',
-	nurseEmail:'benfost@gmail.com',
-	nurseOffice:'27',
-	nursePhone:'07102983745'
-	).save()
-
-
-	def app1=new com.vanand.Appointment(
-	appID:'1',
-	appDate:new Date('05/05/2020'),
-	appTime:'14:00',
-	appDurationMins:'20',
-	roomNumber:'32'
-	).save()
-
-	def app2=new com.vanand.Appointment(
-	appID:'2',
-	appDate:new Date('06/06/2020'),
-	appTime:'12:00',
-	appDurationMins:'20',
-	roomNumber:'30'
+	patientPhone:'07347524625',
+	appointment:app2
 	).save()
 
 
@@ -127,6 +139,8 @@ class BootStrap {
 	totalCost:'23.33',
 	dateIssued:new Date('07/07/2020'),
 	patientPaying:'Yes',
+	prescriptionByDoctor:doc1,
+	patientPrescription:pat1
 	).save()
 
 	def pres2=new com.vanand.Prescription(
@@ -136,7 +150,10 @@ class BootStrap {
 	totalCost:'12.62',
 	dateIssued:new Date('08/08/2020'),
 	patientPaying:'No',
+	prescriptionByDoctor:doc1,
+	patientPrescription:pat2
 	).save()
+
 
     }
     def destroy = {

@@ -3,11 +3,21 @@ package com.vanand
 class Prescription {
 
 	String pharmacyName;
-	Integer prescripNumber;
+	int prescripNumber;
 	String medicine;
 	Double totalCost;
 	Date dateIssued;
 	Boolean patientPaying;
+	Doctor prescriptionByDoctor;
+	Patient patientPrescription;
+
+
+	//Below returns the name of the prescription number
+
+	String toString(){
+		return prescripNumber
+	}
+
 
     static constraints = {
 
@@ -31,6 +41,11 @@ class Prescription {
 
 	patientPaying nullable: false
 	patientPaying blank: false
+
+	prescriptionByDoctor nullable: false
+	prescriptionByDoctor blank: false
+
+
 
     }
 }

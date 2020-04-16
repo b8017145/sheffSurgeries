@@ -7,6 +7,15 @@ class Appointment {
 	String appTime;
 	Integer appDurationMins;
 	String roomNumber;
+	Doctor docName;
+	Surgery surgeryAppointment;
+	
+
+	//Below returns the name of the appointment ID
+
+	String toString(){
+		return appID
+	}
 
     static constraints = {
 
@@ -27,6 +36,9 @@ class Appointment {
 
 	roomNumber nullable: false
 	roomNumber blank: false
+
+	docName nullable: false
+	docName blank: false
 
     }
 }
