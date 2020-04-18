@@ -2,24 +2,30 @@ package com.vanand
 
 class Prescription {
 
+// Below is the attributes for Prescription domain class
+
 	String pharmacyName;
-	int prescripNumber;
+	Integer prescripNumber;
 	String medicine;
 	Double totalCost;
 	Date dateIssued;
 	Boolean patientPaying;
+/* One to many with doctor as one doctor can have many prescriptions but a prescription is unique to a doctor*/
 	Doctor prescriptionByDoctor;
+/* One to many with patient as a patient can have many prescriptions but one prescription belongs to one patient*/
 	Patient patientPrescription;
 
 
-	//Below returns the name of the prescription number
+// Below returns the name of the medicine precribed
 
 	String toString(){
-		return prescripNumber
+		return medicine
 	}
 
 
     static constraints = {
+
+// Below is the constarints for the Prescription domain class
 
 	pharmacyName nullable: false
 	pharmacyName blank: false

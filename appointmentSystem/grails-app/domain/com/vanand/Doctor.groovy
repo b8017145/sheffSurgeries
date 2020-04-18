@@ -2,7 +2,8 @@ package com.vanand
 
 class Doctor {
 
-	//Below is the attributes for Doctor domain class
+// Below is the attributes for Doctor domain class
+
 	String fullName;
 	String qualification;
 	String position;
@@ -11,19 +12,19 @@ class Doctor {
 	String doctorOffice;
 	String doctorPhone;
 	String bio;
-	/*one to many with surgery as a surgery can have many doctors but one doctor is registered to one surgery*/
+/* One to many with surgery as a surgery can have many doctors but one doctor is registered to one surgery*/
 	Surgery registeredSurgery;
 
-
-	/*Below is a one to many with appointment as a doctor can have many appointments but one appointment belongs to one doctor*/
-	/*Below is a Many to many with patient as one doctor can have many patients but one patient can have many doctors*/
-	/*Below is a Many to many with nurse as one doctor can work with many nurses and one nurse can work with many doctors*/
-	//Below is a One to many with prescription as one doctor can have many prescriptions
+// Below are the Domain class relationships
+/* One to many with appointment as a doctor can have many appointments but one appointment belongs to one doctor*/
+/* Many to many with patient as one doctor can have many patients but one patient can have many doctors*/
+/* Many to many with nurse as one doctor can work with many nurses and one nurse can work with many doctors*/
+/* One to many with prescription as one doctor can have many prescriptions but a prescription is unique to a doctor*/
 
 	static hasMany=[appointments:Appointment, patients:Patient, nurses:Nurse, prescriptions:Prescription]
-	
 
-	//Below returns the name of the Doctor
+
+// Below returns the name of the Doctor
 
 	String toString(){
 		return fullName
@@ -32,7 +33,7 @@ class Doctor {
 
     static constraints = {
 
-	//Below is the constarints for Doctor domain class
+// Below is the constarints for the Doctor domain class
 
 	fullName nullable: false
 	fullName blank: false

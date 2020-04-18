@@ -2,6 +2,8 @@ package com.vanand
 
 class Surgery {
 
+// Below is the attributes for the Surgery domain class
+
 	String name;
 	String address;
 	String postcode;
@@ -9,9 +11,18 @@ class Surgery {
 	Integer numberOfPatients;
 	String description;
 	String openingTime;
-	
+
+// Below are the Domain class relationships
+/* One to many with appointment as a surgery can have many appointments but each appointment is unique to the surgery*/
+/* Many to many with patient as one patient could be with many surgeries and one surgery can have many patients*/
+/* One to many with nurse as a surgery can have many nurses and one nurse is associated with one surgery*/
+/* One to many with receptionist as a surgery can have many receptionists and one receptionist is associated with one surgery*/
+/* One to many with doctor as a surgery can have many doctors but one doctor is registered to one surgery*/
 
 	static hasMany=[appointments:Appointment, patients:Patient, nurses:Nurse, receptionists:Receptionist, doctors:Doctor]
+
+
+// Below returns the name of the Surgery
 
 	String toString(){
 		return name
@@ -19,7 +30,9 @@ class Surgery {
 
 
     static constraints = {
-	
+
+// Below is the constarints for Doctor domain class
+
 	name nullable: false
 	name blank: false
 	
@@ -48,7 +61,6 @@ class Surgery {
 	
 	openingTime nullable: false
 	openingTime blank: false
-
 	
 
     }

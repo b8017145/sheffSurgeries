@@ -2,6 +2,8 @@ package com.vanand
 
 class Patient {
 
+// Below is the attributes for Patient domain class
+
 	String patientID;
 	String patientName;
 	String patientAddress;
@@ -9,11 +11,19 @@ class Patient {
 	Date patientDob;
 	Date dateRegistered;
 	String patientPhone;
+// One to one relationship with appointment as one patient can only have one appointment
 	Appointment appointment;
 
 
+// Below are the Domain class relationships
+/* Many to many with surgery as one patient could be with many surgeries and one surgery can have many patients with static belonging to surgery*/
+/* Many to many with doctor as one doctor can have many patients but one patient can have many doctors with static belonging to doctor*/
+/* One to many with prescription as a patient can have many prescriptions but one prescription belongs to one patient*/
+
 	static hasMany=[surgeries:Surgery, doctors:Doctor, prescriptions:Prescription]
 	static belongsTo=[Surgery, Doctor]
+
+// Below returns the name of the Patient
 
 	String toString(){
 		return patientName
@@ -21,6 +31,8 @@ class Patient {
 
 
     static constraints = {
+
+// Below is the constarints for the Patient domain class
 
 	patientID nullable: false
 	patientID blank: false
